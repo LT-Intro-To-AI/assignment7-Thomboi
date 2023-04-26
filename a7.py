@@ -27,8 +27,8 @@ x_or_trainingdata = [
     ([0, 1], [1]),
     ([1, 1], [0])
 ]
-
-xorn = NeuralNet(2, 20, 1)
+#middle number is the hidden nodes
+xorn = NeuralNet(2, 1, 1)
 
 xorn.train(x_or_trainingdata)
 

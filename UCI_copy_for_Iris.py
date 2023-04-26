@@ -15,9 +15,9 @@ def parse_line(line: str) -> Tuple[List[float], List[float]]:
     """
     tokens = line.split(",")
     # print(tokens)
-    out = int(tokens[0])
+    out = float(tokens[0])
     # print(out)
-    output = [0 if out == 1 else 0.5 if out == 2 else 1]
+    output = [0 if out == "Iris-setosa" else 0.5 if out == "Iris-versicolor" else 1]
     # print(output)
     inpt = [float(x) for x in tokens[1:]]
     #print(inpt)
@@ -50,7 +50,7 @@ def normalize(data: List[Tuple[List[float], List[float]]]):
     return data
 
 
-with open("wine_data.txt", "r") as f:
+with open("iris_data.txt", "r") as f:
     training_data = [parse_line(line) for line in f.readlines() if len(line) > 4]
 
 # for line in training_data:
@@ -63,7 +63,7 @@ print(len(test_data))
 # for line in td:
 #     print(line)
 
-nn = NeuralNet(13, 3, 1)
+nn = NeuralNet(4, 3, 1)
 nn.train(train_data, learning_rate=0.5)
 
 for i in nn.test_with_expected(test_data):
