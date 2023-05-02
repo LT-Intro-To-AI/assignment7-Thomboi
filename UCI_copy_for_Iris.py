@@ -15,11 +15,12 @@ def parse_line(line: str) -> Tuple[List[float], List[float]]:
     """
     tokens = line.split(",")
     # print(tokens)
-    out = float(tokens[0])
+    out = (tokens[4])
     # print(out)
-    output = [0 if out == "Iris-setosa" else 0.5 if out == "Iris-versicolor" else 1]
+    output = [0 if out == "Iris-setosa" else 0.5 if out == "Iris-versicolor" else 1] #fix this output so it's not all one!!!
+    
     # print(output)
-    inpt = [float(x) for x in tokens[1:]]
+    inpt = [float(x) for x in tokens[0:4]]
     #print(inpt)
     return (inpt, output)
 
@@ -53,6 +54,15 @@ def normalize(data: List[Tuple[List[float], List[float]]]):
 with open("iris_data.txt", "r") as f:
     training_data = [parse_line(line) for line in f.readlines() if len(line) > 4]
 
+# iris_test_data = [
+#     [5.1, 3.5, 1.4, 0.2],   #setosa
+#     [4.9, 3.1, 1.5, 0.1],   #setosa
+#     [5.5, 2.3, 4.0, 1.3],  #versicolor
+#     [5.8, 2.7, 4.1, 1.0],  #versicolor
+#     [6.5, 3.0, 5.5, 1.8], #virginica
+#     [7.2, 3.2, 6.0, 1.8]  #virginica
+
+# ]
 # for line in training_data:
     # print(line)
 td = normalize(training_data)
