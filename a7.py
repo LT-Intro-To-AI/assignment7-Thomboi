@@ -52,16 +52,16 @@ von.train(voter_opinion_data)
 
 print(von.test_with_expected(voter_opinion_data))
 
-test_data = [
-    [1, 1, 1, .1, .1],
-    [.5, .2, .1, .7, .7],
-    [.8, .3, .3, .3, .8],
-    [.8, .3, .3, .8, .3],
-    [.9, .8, .8, .3, .6]
-]
+# test_data = [
+#     [1, 1, 1, .1, .1],
+#     [.5, .2, .1, .7, .7],
+#     [.8, .3, .3, .3, .8],
+#     [.8, .3, .3, .8, .3],
+#     [.9, .8, .8, .3, .6]
+# ]
 
-print(f"case 1: {test_data[0]} evaluates to: {von.evaluate(test_data[0])}")
-print(f"case 2: {test_data[1]} evaluates to: {von.evaluate(test_data[1])}")
-print(f"case 3: {test_data[2]} evaluates to: {von.evaluate(test_data[2])}")
-print(f"case 4: {test_data[3]} evaluates to: {von.evaluate(test_data[3])}")
-print(f"case 5: {test_data[4]} evaluates to: {von.evaluate(test_data[4])}")
+# print(f"case 1: {test_data[0]} evaluates to: {von.evaluate(test_data[0])}")
+# print(f"case 2: {test_data[1]} evaluates to: {von.evaluate(test_data[1])}")
+# print(f"case 3: {test_data[2]} evaluates to: {von.evaluate(test_data[2])}")
+# print(f"case 4: {test_data[3]} evaluates to: {von.evaluate(test_data[3])}")
+# print(f"case 5: {test_data[4]} evaluates to: {von.evaluate(test_data[4])}")
