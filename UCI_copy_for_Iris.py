@@ -15,13 +15,19 @@ def parse_line(line: str) -> Tuple[List[float], List[float]]:
     """
     tokens = line.split(",")
     # print(tokens)
-    out = (tokens[4])
+    out = tokens[4].strip()
     # print(out)
-    output = [0 if out == "Iris-setosa" else 0.5 if out == "Iris-versicolor" else 1] #fix this output so it's not all one!!!
+    output = [0 if out == "Iris-setosa" else 0.5 if out == "Iris-versicolor" else 1]
+    # if out == "Iris-setosa":
+    #     output= 0
+    # elif out == "Iris-versicolor":
+    #     output= .5
+    # else:
+    #     output= 1
     
-    # print(output)
+    print(output)
     inpt = [float(x) for x in tokens[0:4]]
-    #print(inpt)
+    # print(inpt)
     return (inpt, output)
 
 
