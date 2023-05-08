@@ -25,7 +25,7 @@ def parse_line(line: str) -> Tuple[List[float], List[float]]:
     # else:
     #     output= 1
     
-    print(output)
+    # print(output)
     inpt = [float(x) for x in tokens[0:4]]
     # print(inpt)
     return (inpt, output)
@@ -67,11 +67,12 @@ with open("iris_data.txt", "r") as f:
 #     [5.8, 2.7, 4.1, 1.0],  #versicolor
 #     [6.5, 3.0, 5.5, 1.8], #virginica
 #     [7.2, 3.2, 6.0, 1.8]  #virginica
-
 # ]
 # for line in training_data:
     # print(line)
 td = normalize(training_data)
+# for line in td:
+#     print (line)
 train_data, test_data = train_test_split(td, test_size=.1)
 print(len(train_data))
 print(len(test_data))
@@ -80,7 +81,7 @@ print(len(test_data))
 #     print(line)
 
 nn = NeuralNet(4, 3, 1)
-nn.train(train_data, learning_rate=0.5)
+nn.train(train_data, learning_rate=.5)
 
 for i in nn.test_with_expected(test_data):
     print(f"desired: {i[1]}, actual: {i[2]}")
